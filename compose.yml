@@ -1,0 +1,20 @@
+services:
+  swoole:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: swoole
+    restart: unless-stopped
+    ports:
+      - "9501:9501"
+    volumes:
+      - .:/var/www/html/content
+    working_dir: /var/www/html/content
+    environment:
+      - DOCKER=1
+      - HOST=0.0.0.0
+      - HOSTNAME=docker.local
+      - PORT=9501
+      - SWOOLE_HTTP_HOST=0.0.0.0 # required for Laravel swoole
+      - SWOOLE_HTTP_WEBSOCKET=true # required for Laravel swoole websocket
+    tty: true

@@ -1,0 +1,9 @@
+
+# PHP CS Fixer configuration
+/.php-cs-fixer.cache
+/.php-cs-fixer.php
+/.php-cs-fixer.dist.php
+
+# Settings
+vendor
+.config.json
